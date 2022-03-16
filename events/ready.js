@@ -13,7 +13,7 @@ module.exports = {
     
         const rest = new REST({
             version: "9"
-        }).setToken("OTUwNTY3Nzg4MjIzODA3NTM5.YiazPQ.ABKQBt0LSkDpDzYvceUCmv38qTk");
+        }).setToken(process.env.TOKEN);
     
         (async () => {
             try {
