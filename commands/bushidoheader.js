@@ -33,8 +33,6 @@ module.exports ={
 
         bgcolor = context.getImageData(0, 0, 1, 1).data
 
-        console.log(`${bgcolor[0]},${bgcolor[1]},${bgcolor[2]},${bgcolor[3]}`)
-
         context.globalCompositeOperation = 'destination-under'
 
         context.fillStyle = `rgba(${bgcolor[0]},${bgcolor[1]},${bgcolor[2]},${bgcolor[3]})`
@@ -45,7 +43,9 @@ module.exports ={
 
         const attachment = new MessageAttachment(canvas.toBuffer(), 'BushidoTwitterHeader.png')
 
+        requestor = Interaction.user.username
 
+        console.log(`${requestor} generated a Bushido Header from Bushido #: ${ronin}`)
 
         Interaction.reply({
 

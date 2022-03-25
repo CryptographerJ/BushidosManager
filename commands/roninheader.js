@@ -33,8 +33,6 @@ module.exports ={
 
         bgcolor = context.getImageData(0, 0, 1, 1).data
 
-        console.log(`${bgcolor[0]},${bgcolor[1]},${bgcolor[2]},${bgcolor[3]}`)
-
         context.globalCompositeOperation = 'destination-under'
 
         context.fillStyle = `rgba(${bgcolor[0]},${bgcolor[1]},${bgcolor[2]},${bgcolor[3]})`
@@ -44,6 +42,10 @@ module.exports ={
         context.drawImage(background, Interaction.options.getString("position"), 0, 500, 500)
 
         const attachment = new MessageAttachment(canvas.toBuffer(), 'RoninTwitterHeader.png')
+
+        requestor = Interaction.user.username
+
+        console.log(`${requestor} generated a Ronin Header from Ronin #: ${ronin}`)
 
 
 

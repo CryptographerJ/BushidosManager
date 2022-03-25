@@ -45,7 +45,9 @@ module.exports ={
 
         const attachment = new MessageAttachment(canvas.toBuffer(), '3RoninTwitterHeader.png')
 
+        requestor = Interaction.user.username
 
+        console.log(`${requestor} generated a Triple Ronin Header from Ronin's ${roninone}, ${ronintwo}, and ${roninthree}`)
 
         Interaction.reply({
 

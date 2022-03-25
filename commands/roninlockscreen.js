@@ -48,6 +48,10 @@ module.exports ={
 
         const attachment = new MessageAttachment(canvas.toBuffer(), 'RoninLockscreen.png')
 
+        requestor = Interaction.user.username
+
+        console.log(`${requestor} generated a Ronin Lockscreen from Ronin #: ${ronin}`)
+
 
 
         Interaction.reply({

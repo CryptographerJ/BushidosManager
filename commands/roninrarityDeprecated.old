@@ -5,12 +5,10 @@ const { isMessageComponentInteraction } = require("discord-api-types/utils/v9")
 const { Interaction, MessageAttachment } = require("discord.js")
 const Canvas = require('canvas')
 const puppeteer = require('puppeteer')
-const jsonfile = require('jsonfile')
-const file = 'roninDB.json'
 
 module.exports ={
     data: new SlashCommandBuilder()
-        .setName("roninrarity")
+        .setName("roninrarityold")
         .setDescription("Returns the Rarity.Tools Information for a Ronin")
         .addStringOption((option) =>
             option
@@ -21,18 +19,13 @@ module.exports ={
     async execute(Interaction) {
 
         ronin = Interaction.options.getString("number");
+        const image = fs.readFileSync(path.join(__dirname, `../rarityToolsImages/rarityRonin${ronin}.png`))
 
-        roninList = jsonfile.readFileSync(file)
-
-        roninID = roninList[ronin].roninID
-        rarityRank = roninList[ronin].rarityRank
-        requestor = Interaction.user.username
-
-        console.log(`${requestor} checked rarity of Ronin # ${roninID} it is rank ${rarityRank}`)
+        const attachment = new MessageAttachment(image)
 
         Interaction.reply({
 
-            content: `Ronin #${roninID} is rank ${rarityRank}!\n You can see it here: https://opensea.io/assets/0x5763127d8d7e1870a9bc5f7677c0739f5f90d859/${ronin}`
+            content: `https://opensea.io/assets/0x5763127d8d7e1870a9bc5f7677c0739f5f90d859/${ronin}`,
             //files: [attachment]
             //ephemeral: true
         })

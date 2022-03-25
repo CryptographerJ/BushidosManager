@@ -61,13 +61,12 @@ module.exports ={
             ////ctx.drawImage(imae,  sx,  sy, sWi, sHt,  dx,  dy, dWi, dHt);
         }
 
-        
-
-
 
         const attachment = new MessageAttachment(canvas.toBuffer(), 'BushidosLockscreen.png')
 
+        requestor = Interaction.user.username
 
+        console.log(`${requestor} generated a Bushido lockscreen from Bushido #: ${warriorid}`)
 
         Interaction.reply({
 
