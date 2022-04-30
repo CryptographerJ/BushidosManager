@@ -6,7 +6,7 @@ const Canvas = require('canvas')
 module.exports ={
     data: new SlashCommandBuilder()
         .setName("bushidoheader")
-        .setDescription("Generates a Twitter Header of the bushido Provided")
+        .setDescription("Generates a Twitter Header of the Bushido Provided")
         .addStringOption((option) =>
             option
                 .setName("number")

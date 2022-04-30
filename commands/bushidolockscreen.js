@@ -26,8 +26,12 @@ module.exports ={
                 .setRequired(false)
                 .addChoice('Honor', "4")
                 .addChoice('Courage', "1")
+                .addChoice('Respect', "3")
+                .addChoice('Loyalty', "0")
+                .addChoice('Justice', "14")
                 .addChoice('Sincerity', "6")
-                .addChoice('Compassion', "2")),
+                .addChoice('Compassion', "2")
+                .addChoice('Self-Control', "12")),
 
     async execute(Interaction) {
         const warriorid = Interaction.options.getString("number")
